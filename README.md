@@ -21,6 +21,13 @@ plt.show()
 
 ![screenshot of sample output](/example.png?raw=true)
 
+References
+----------
+
++ R. Aguiar and M. Collares-Pereira, ["A simple procedure for the generation of sequences of daily radiation values using Markov transition matrices"](http://www.sciencedirect.com/science/article/pii/0038092X88900497), Solar Energy, vol. 40, 269-279, 1988
++ R. Aguiar and M. Collares-Pereira, ["TAG: A time-dependent, autoregressive Gaussian model for generating synthetic hourly radiation"](http://www.sciencedirect.com/science/article/pii/0038092X9290068L), Solar Energy, vol. 49, 167-174, 1992
++ A. Luque, S. Hegedus, [“Handbook of Photovoltaic Science and Engineering”](http://www.wiley.com/WileyCDA/WileyTitle/productCd-0470721693.html), Wiley, 2003
+
 Credits
 -------
 
