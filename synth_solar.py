@@ -143,7 +143,7 @@ def Aguiar_daily_Kt(Ktm, Kt0, nd):
 
     # 0.45 < Kt <= 0.50
     MTM_lib[4] = np.matrix([[0.120,0.200,0.160,0.120,0.120,0.120,0.080,0.000,0.040,0.040],
-                    [0.100,0.080,0.120,0.140,0.140,0.200,0.180,0.040,0.530,0.000],
+                    [0.100,0.080,0.120,0.140,0.140,0.200,0.180,0.040,0.000,0.000],
                     [0.046,0.114,0.068,0.171,0.125,0.171,0.080,0.159,0.057,0.011],
                     [0.015,0.061,0.084,0.099,0.191,0.153,0.153,0.115,0.115,0.015],
                     [0.024,0.030,0.098,0.098,0.165,0.195,0.195,0.140,0.043,0.012],
@@ -221,7 +221,7 @@ def Aguiar_daily_Kt(Ktm, Kt0, nd):
     min_state = MTM_min[MTM_index]                 
     max_state = MTM_max[MTM_index] 
     step_size = (max_state - min_state)/10
-    states = np.arange(min_state, max_state, step_size)   
+    states = np.arange(min_state, max_state, step_size)
     
     # Generate daily clearness indices for nd days
     Kti = Kt0
@@ -241,7 +241,7 @@ def Aguiar_daily_Kt(Ktm, Kt0, nd):
         else:
             k_interp = (R - MTM_cum[new_state-2]) / (MTM_cum[new_state-1]-MTM_cum[new_state-2])
         
-        Kti = k_interp * np.mean(np.cumsum(MTM[:,0:new_state], axis=1)[:,new_state-1])
+        Kti = states[new_state-1] + k_interp * step_size
         Kt.append(Kti)
     
     return Kt

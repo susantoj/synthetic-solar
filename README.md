@@ -11,15 +11,24 @@ Example
 import synth_solar
 import matplotlib.pyplot as plt
 
+# Mean monthly clearness indices and latitude for Sydney, Australia
 Ktm = [0.49, 0.48, 0.50, 0.51, 0.51, 0.54, 0.54, 0.57, 0.56, 0.54, 0.51, 0.51]
 lat = -34.8
+
+# Generate sequence of synthetic hourly solar irradiances
 G0 = synth_solar.Aguiar_hourly_G0(Ktm, lat)
 
+# Print global horizontal irradiation (GHI) in kWh/m2/yr
+print(sum(G0))
+
+# Plot synthetic solar sequence
 plt.plot(G0)
 plt.show()
 ```
 
 ![screenshot of sample output](/example.png?raw=true)
+
+Running the above routine generates sequences with GHI typically in the range of 1550 - 1700 kWh/m2/yr, which is in line with the long-term solar irradiation in the greater Sydney area (e.g. based on satellite data such as SolarGIS).
 
 References
 ----------
